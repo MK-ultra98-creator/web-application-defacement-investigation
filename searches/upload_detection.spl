@@ -1,0 +1,7 @@
+# Upload detection SPL
+
+index=iis sourcetype="iis:access" method=POST
+| where like(uri_path, "%upload%") OR like(uri_path, "%file_upload%")
+| rex field=uri_path "(?<upload_path>/.*)"
+| table _time clientip uri_path useragent status uri_query
+| where match(uri_query, "(?i)\\.php|\\.jsp|\\.asp|eval\\(|base64_decode\\(|system\\(")

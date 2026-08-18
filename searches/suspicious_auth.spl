@@ -1,0 +1,5 @@
+# Suspicious authentication SPL (bruteforce/credential stuffing)
+
+index=auth sourcetype="auth:log" action=failure
+| stats count by user clientip
+| where count > 20

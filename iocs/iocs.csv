@@ -1,0 +1,3 @@
+ip,first_seen,last_seen,protocol,uri,user_agent,filename,sha256,comments
+# Example row (replace with real IOCs discovered during analysis)
+203.0.113.45,2026-07-01T12:34:00Z,2026-07-01T12:50:00Z,HTTP,/upload.php,"curl/7.68.0","cmd.php",<sha256>,"Upload of webshell"
